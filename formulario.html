@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Teste</title>
+
+    <style>
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        form{
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label{
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        
+        input[type="text"],
+        textarea{
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"]{
+            background-color: rgb(43, 100, 223);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <form id="formulario">
+
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome">
+
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email">
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea name="mensagem" id="mensagem" rows="5"></textarea>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+
+    <script>
+
+        const formulario = document.getElementById("formulario");
+
+        formulario.addEventListener("submit", function(event){
+            event.preventDefault();
+        
+
+        const nome = document.getElementById("nome").value;
+        const email = document.getElementById("email").value;
+        const mensagem = document.getElementById("mensagem").value;
+
+        if(nome === "" || email === "" || mensagem === ""){
+            alert("Preencha todos os campos!!!!!!!!!!!");
+        }else{
+            alert("Formulário enviado com sucesso!");
+            formulario.reset();
+        }
+    });
+
+
+
+    </script>
+
+</body>
+</html>
